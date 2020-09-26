@@ -1,4 +1,4 @@
-
+package prog;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -11,7 +11,7 @@ public class one {
     public static void main(String[] args) {
 
 
-        File file = new File("C:\\Users\\user\\Desktop\\Maturka\\Informatyka\\Rozwiązania\\2016\\txt\\dane_6_2.txt");
+        File file = new File("C:\\Users\\user\\Desktop\\Maturka\\Informatyka\\Rozwiązania\\2016\\txt\\dane_6_1.txt");
         Scanner scanner = null;
 
 
@@ -23,19 +23,13 @@ public class one {
         }
 
         while(scanner.hasNextLine()){
-            String scanned = scanner.nextLine();
-            String string = scanned.split(" ")[0];
-            int key = Integer.parseInt(scanned.split(" ")[1]);
-
-
-
+            String string = scanner.nextLine();
+            int key = 107;
             StringBuilder stringBuilder = new StringBuilder();
 
             for(int i =0; i< string.length(); i++ ) {
-                int index = alphabet.indexOf(string.charAt(i)) - key;
-                System.out.println(index);
-                System.out.println(index/alphabet.length() * alphabet.length());
-                if (index < 0) index = index - (int) (index/alphabet.length() -1) * alphabet.length() ;
+                int index = alphabet.indexOf(string.charAt(i)) + key;
+                if (index > alphabet.length()) index = index - (int) index/alphabet.length() * alphabet.length();
 
 
                 stringBuilder.append(alphabet.charAt(index));
