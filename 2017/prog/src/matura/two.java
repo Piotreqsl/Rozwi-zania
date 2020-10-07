@@ -2,6 +2,7 @@ package matura;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Scanner;
 
@@ -42,11 +43,9 @@ public class two {
 		for(int j =0; j < table.length; j++) {
 			
 			String[] splited = table[j].split(" ");
+			System.out.println(Arrays.toString(splited));
 			
 			if(!isRowSymmetrical(splited)) cursor++;
-		   
-			
-			
 		}
 		System.out.println(cursor);
 		
